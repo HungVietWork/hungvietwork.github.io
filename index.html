@@ -282,8 +282,8 @@
 
                 <!-- Gallery Category Filters -->
                 <div class="flex flex-wrap gap-2 p-1.5 rounded-xl glass-panel border border-slate-800 text-xs font-mono">
-                    <button class="filter-btn active px-4 py-2 rounded-lg transition-all" data-filter="all">All Projects</button>
-                    <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="major">Major Titles</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="all">All Projects</button>
+                    <button class="filter-btn active px-4 py-2 rounded-lg transition-all" data-filter="major">Major Titles</button>
                     <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="casual">Casual / Mobile</button>
                     <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="pc">PC & Unreal</button>
                 </div>
@@ -292,17 +292,17 @@
             <!-- Projects Grid -->
             <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
-                <!-- Shift n' Smash -->
+                <!-- 1. Shift n' Smash -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/1ot038g18fA/hqdefault.jpg" alt="Shift n' Smash" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <img src="images/shiftnsmash_thumb.png" alt="Shift n' Smash" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('1ot038g18fA', 'Shift n\' Smash (Hi-Tech World Shifting)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="openVideoModal('videos/shiftnsmash_video.mp4', 'Shift n\' Smash (Mobile • Sci-Fi Fantasy Action)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
                                 <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
                             </div>
                         </button>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Sci-Fi Action</span>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Sci-Fi Fantasy Action</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
@@ -317,12 +317,12 @@
                     </div>
                 </div>
 
-                <!-- Dead Watcher -->
+                <!-- 2. Dead Watcher -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/TTeaCgavXck/hqdefault.jpg" alt="Dead Watcher" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <img src="images/deadwatcher_thumb.png" alt="Dead Watcher" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('TTeaCgavXck', 'Dead Watcher (Strategy & Zombie Action)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="openVideoModal('videos/deadwatcher_video.mp4', 'Dead Watcher (Action • Strategy)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
                                 <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
                             </div>
@@ -342,12 +342,62 @@
                     </div>
                 </div>
 
-                <!-- Krabots -->
+                <!-- 3. Epic Odyssey -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/NCHYcRj3KkI/hqdefault.jpg" alt="Krabots" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <img src="images/epicodyssey_thumb.png" alt="Epic Odyssey" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('NCHYcRj3KkI', 'Krabots (Physics PvP Combat Arena)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="openVideoModal('videos/epicodyssey_video.mp4', 'Epic Odyssey (Mobile • Fantasy Card Battle)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Fantasy Card Battle</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Epic Odyssey</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Visually stunning tactical card battle RPG set in a high-fantasy realm. Authored elemental spell bursts, magical environment atmospheres, and character skill visual effects.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Fantasy Magic</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Spell VFX</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. FZ9 Timeshift -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/fz9timeshift_thumb.png" alt="FZ9 Timeshift" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/fz9timeshift_video.mp4', 'FZ9 Timeshift (Mobile • FPS)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • FPS</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">FZ9 Timeshift</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">High-octane story-driven FPS featuring time-dilation mechanics (time moves when you move). Designed muzzle flashes, bullet trails, explosive particle dynamics, and cinematic action sequences.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Bullet Time</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">FPS Combat</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Krabots -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/krabots_thumb.png" alt="Krabots" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/krabots_video.mp4', 'Krabots (Mobile • Action PvP)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
                                 <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
                             </div>
@@ -367,12 +417,37 @@
                     </div>
                 </div>
 
-                <!-- Deadly Convoy -->
+                <!-- 6. 7554 -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/7554_thumb.png" alt="7554 Game" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/7554_video.mp4', '7554 (PC • FPS)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">PC • FPS</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">7554</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Historic first Vietnamese PC FPS title (Emobigames). Lead VFX, weapon impact effects, environmental fire/smoke particle design, and cinematic trailer production.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Trinity Vision</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Weapon VFX</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Trailer Direction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Deadly Convoy -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/4btX46k0HFI/hqdefault.jpg" alt="Deadly Convoy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <img src="images/deadlyconvoy_thumb.png" alt="Deadly Convoy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('4btX46k0HFI', 'Deadly Convoy (Post-Apocalyptic Vehicle Survival)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="openVideoModal('videos/deadlyconvoy_video.mp4', 'Deadly Convoy (Mobile • Survival RPG)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
                                 <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
                             </div>
@@ -392,12 +467,62 @@
                     </div>
                 </div>
 
-                <!-- Boom Battlefield -->
+                <!-- 8. 300475 -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/300475_thumb.png" alt="300475 Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/300475_video.mp4', '300475 (PC • FPS)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">PC • FPS</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">300475</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Ambitious historical war action project built in Unreal Engine depicting key historical battles. Handled realistic volumetric smoke, explosions, environment art, and cinematic video previews.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Unreal Engine</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Volumetric Smoke</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. 2112 Evolution -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/2112evolution_thumb.png" alt="2112 Evolution" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/2112evolution_video.mp4', '2112 Evolution (PC • RTS)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">PC • RTS</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">2112 Evolution</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Pioneering Vietnamese sci-fi real-time strategy (RTS) PC game. Crafted sci-fi beam weapons, energy shields, explosion dynamics, and sound/video promotional media.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Sci-Fi RTS</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Energy Shields</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Emobigames</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Boom Battlefield -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/TVY568Neuso/hqdefault.jpg" alt="Boom Battlefield" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <img src="images/boombattlefield_thumb.png" alt="Boom Battlefield" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('TVY568Neuso', 'Boom Battlefield (Sci-Fi Tower Defense)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="openVideoModal('videos/boombattlefield_video.mp4', 'Boom Battlefield (Mobile • Tower Defense)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
                                 <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
                             </div>
@@ -417,12 +542,12 @@
                     </div>
                 </div>
 
-                <!-- 3Q Chiến Chiến Chiến -->
+                <!-- 11. 3Q Chiến Chiến Chiến -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/xE_P4YgmgLY/hqdefault.jpg" alt="3Q Chien Chien Chien" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <img src="images/3qchienchienchien_thumb.png" alt="3Q Chien Chien Chien" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('xE_P4YgmgLY', '3Q Chiến Chiến Chiến (Tactical Card Game)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="openVideoModal('videos/3qchienchienchien_video.mp4', '3Q Chiến Chiến Chiến (Mobile • Three Kingdoms RPG)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
                                 <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
                             </div>
@@ -442,12 +567,12 @@
                     </div>
                 </div>
 
-                <!-- Castle Connect -->
+                <!-- 12. Castle Connect -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/BgsmuUViwyQ/hqdefault.jpg" alt="Castle Connect" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <img src="images/castleconnect_thumb.png" alt="Castle Connect" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('BgsmuUViwyQ', 'Castle Connect (Puzzle & Pathway Building)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="openVideoModal('videos/castleconnect_video.mp4', 'Castle Connect (Mobile • Puzzle Strategy)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
                                 <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
                             </div>
@@ -467,12 +592,12 @@
                     </div>
                 </div>
 
-                <!-- Caravan War -->
+                <!-- 13. Caravan War -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/YIJa9sFCxFk/hqdefault.jpg" alt="Caravan War" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <img src="images/caravanwar_thumb.png" alt="Caravan War" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('YIJa9sFCxFk', 'Caravan War (Mobile Tower Defense)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="openVideoModal('videos/caravanwar_video.mp4', 'Caravan War (Mobile • Tower Defense)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
                                 <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
                             </div>
@@ -492,117 +617,17 @@
                     </div>
                 </div>
 
-                <!-- FZ9 Timeshift -->
-                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc casual">
-                    <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/314101140/hqdefault.jpg" alt="FZ9 Timeshift" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85" onerror="this.src='https://img.youtube.com/vi/1ot038g18fA/hqdefault.jpg'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('314101140', 'FZ9 Timeshift (Bullet Time Action FPS)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
-                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
-                            </div>
-                        </button>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • FPS Action</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">FZ9 Timeshift</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">High-octane story-driven FPS featuring time-dilation mechanics (time moves when you move). Designed muzzle flashes, bullet trails, explosive particle dynamics, and cinematic action sequences.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Bullet Time</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">FPS Combat</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Epic Odyssey -->
+                <!-- 14. Nhất Đại Tông Sư -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/314101141/hqdefault.jpg" alt="Epic Odyssey" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85" onerror="this.src='https://img.youtube.com/vi/xE_P4YgmgLY/hqdefault.jpg'">
+                        <img src="images/nhatdaitongsu_thumb.png" alt="Nhất Đại Tông Sư" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('314101141', 'Epic Odyssey (3D Fantasy Action RPG)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onclick="openVideoModal('videos/nhatdaitongsu_video.mp4', 'Nhất Đại Tông Sư (Cross-Platform • 3D RPG)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
                                 <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
                             </div>
                         </button>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • 3D Fantasy RPG</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Epic Odyssey</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Visually stunning 3D tactical adventure RPG set in a high-fantasy realm. Authored elemental spell bursts, magical environment atmospheres, and character skill visual effects.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Fantasy Magic</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Spell VFX</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 300475 -->
-                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc">
-                    <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/314101142/hqdefault.jpg" alt="300475 Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85" onerror="this.src='https://img.youtube.com/vi/J3mN5_Nal_s/hqdefault.jpg'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('300475', '300475 (Unreal Engine Historical Action Project)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
-                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
-                            </div>
-                        </button>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">PC • Unreal Engine</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">300475</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Ambitious historical war action project built in Unreal Engine depicting key historical battles. Handled realistic volumetric smoke, explosions, environment art, and cinematic video previews.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Unreal Engine</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Volumetric Smoke</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2112 Revolution -->
-                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc">
-                    <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/314101143/hqdefault.jpg" alt="2112 Revolution" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85" onerror="this.src='https://img.youtube.com/vi/J3mN5_Nal_s/hqdefault.jpg'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('2112Revolution', '2112 Revolution (Sci-Fi RTS Game)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
-                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
-                            </div>
-                        </button>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">PC • Sci-Fi RTS</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">2112 Revolution</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Pioneering Vietnamese sci-fi real-time strategy (RTS) PC game. Crafted sci-fi beam weapons, energy shields, explosion dynamics, and sound/video promotional media.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Sci-Fi RTS</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Energy Shields</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Emobigames</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Nhất Đại Tông Sư -->
-                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
-                    <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/H9_2dVwG_Gg/hqdefault.jpg" alt="Nhat Dai Tong Su" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('H9_2dVwG_Gg', 'Nhat Dai Tong Su (Mobile/Cross 3D RPG)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
-                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
-                            </div>
-                        </button>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Cross • 3D RPG</span>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Cross-Platform • 3D RPG</span>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
@@ -617,11 +642,14 @@
                     </div>
                 </div>
 
-                <!-- Dino -->
+                <!-- 15. Dino -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="casual">
                     <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
-                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Dino</h3>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Dino</h3>
+                                <span class="px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Casual • Hatching & Collection</span>
+                            </div>
                             <p class="text-xs text-slate-400 mt-2 line-clamp-2">Egg-hatching and species collection game mechanic with interactive incubator particle FX and cute creature art supervision.</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
@@ -632,42 +660,20 @@
                     </div>
                 </div>
 
-                <!-- Hotpot -->
+                <!-- 16. Hotpot -->
                 <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="casual">
                     <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
-                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Hotpot</h3>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Hotpot</h3>
+                                <span class="px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Casual • Animal Collection & Battle</span>
+                            </div>
                             <p class="text-xs text-slate-400 mt-2 line-clamp-2">Cute animal collection, battle system, and interactive village construction mechanics with whimsical visual effects.</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
                             <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Animal Collection</span>
                             <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Combat</span>
                             <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Village Building</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7554 -->
-                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc">
-                    <div class="relative aspect-video overflow-hidden bg-slate-950">
-                        <img src="https://img.youtube.com/vi/J3mN5_Nal_s/hqdefault.jpg" alt="7554 Game" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <button onclick="openVideoModal('J3mN5_Nal_s', '7554 (PC, FPS Game)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
-                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
-                            </div>
-                        </button>
-                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">PC • FPS</span>
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">7554</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Historic first Vietnamese PC FPS title (Emobigames). Lead VFX, weapon impact effects, environmental fire/smoke particle design, and cinematic trailer production.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Trinity Vision</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Weapon VFX</span>
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Trailer Direction</span>
                         </div>
                     </div>
                 </div>
@@ -846,7 +852,7 @@
                             Contributed to Vietnam's pioneer historical PC FPS <strong class="text-slate-100">7554</strong> and RTS <strong class="text-slate-100">2112 Revolution</strong>. Handled real-time particles, weapon fire dynamics, sound editing, and video trailer editing.
                         </p>
                         <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
-                            <span class="px-2 py-0.5 rounded bg-slate-800/80">Key Titles: 7554, 2112 Revolution</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80">Key Titles: 7554, 2112 Evolution</span>
                         </div>
                     </div>
                 </div>
@@ -938,7 +944,7 @@
         </div>
     </footer>
 
-    <!-- LIGHTBOX YOUTUBE MODAL PLAYER -->
+    <!-- LOCAL VIDEO MODAL PLAYER -->
     <div id="video-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6">
         <div class="relative w-full max-w-4xl glass-panel rounded-2xl overflow-hidden border border-cyan-500/30 shadow-2xl shadow-cyan-950/80 space-y-0">
             <div class="flex items-center justify-between px-5 py-3 border-b border-slate-800/80 bg-slate-950">
@@ -947,14 +953,15 @@
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-            <div class="relative aspect-video bg-black">
-                <iframe 
-                    id="modal-iframe" 
-                    class="w-full h-full border-0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="relative aspect-video bg-black flex items-center justify-center">
+                <video 
+                    id="modal-video-player" 
+                    class="w-full h-full" 
+                    controls 
+                    autoplay>
+                    <source id="modal-video-source" src="" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
             </div>
         </div>
     </div>
@@ -1023,36 +1030,47 @@
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
+        function applyFilter(filter) {
+            projectCards.forEach(card => {
+                const categories = card.getAttribute('data-category');
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
                 const filter = btn.getAttribute('data-filter');
-                projectCards.forEach(card => {
-                    const categories = card.getAttribute('data-category');
-                    if (filter === 'all' || categories.includes(filter)) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+                applyFilter(filter);
             });
         });
 
-        // YouTube Video Modal Lightbox Handler
+        // Apply Major Titles filter on initial load
+        applyFilter('major');
+
+        // Local Video Modal Lightbox Handler
         const videoModal = document.getElementById('video-modal');
-        const modalIframe = document.getElementById('modal-iframe');
+        const videoPlayer = document.getElementById('modal-video-player');
+        const videoSource = document.getElementById('modal-video-source');
         const modalVideoTitle = document.getElementById('modal-video-title');
 
-        function openVideoModal(youtubeId, title) {
-            modalIframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&enablejsapi=1`;
+        function openVideoModal(videoUrl, title) {
+            videoSource.src = videoUrl;
+            videoPlayer.load();
+            videoPlayer.play();
             modalVideoTitle.textContent = title;
             videoModal.classList.remove('hidden');
         }
 
         function closeVideoModal() {
-            modalIframe.src = '';
+            videoPlayer.pause();
+            videoSource.src = '';
             videoModal.classList.add('hidden');
         }
 
