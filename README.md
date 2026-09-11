@@ -113,7 +113,7 @@
             <!-- Brand Identity with Updated Profile Avatar -->
             <a href="#" class="flex items-center gap-3.5 group">
                 <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-600 to-violet-600 p-[1px] flex items-center justify-center transition-transform group-hover:scale-105 shadow-lg shadow-cyan-500/20 overflow-hidden">
-                    <img src="avatar.jpg" alt="Nguyen Hai Viet Hung" class="w-full h-full object-cover rounded-[11px]">
+                    <img src="images/avatar.jpg" alt="Nguyen Hai Viet Hung" class="w-full h-full object-cover rounded-[11px]">
                 </div>
                 <div>
                     <span class="font-bold text-base tracking-wide text-slate-100 group-hover:text-cyan-400 transition-colors">NGUYEN HAI VIET HUNG</span>
@@ -226,7 +226,7 @@
                     <!-- Avatar Image Header -->
                     <div class="flex items-center gap-4">
                         <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-400 to-violet-600 p-[2px] shadow-lg shadow-cyan-500/30 flex-shrink-0">
-                            <img src="avatar.jpg" alt="Nguyen Hai Viet Hung" class="w-full h-full object-cover rounded-[14px]">
+                            <img src="images/avatar.jpg" alt="Nguyen Hai Viet Hung" class="w-full h-full object-cover rounded-[14px]">
                         </div>
                         <div class="space-y-1">
                             <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Hanoi, Vietnam</div>
