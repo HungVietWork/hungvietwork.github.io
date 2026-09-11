@@ -1,1 +1,975 @@
-# hungvietwork.github.io
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Hai Viet Hung — Senior VFX Artist & Creative Technical Director</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        techBg: '#0b0f19',
+                        techCard: 'rgba(15, 23, 42, 0.75)',
+                        cyanGlow: '#06b6d4',
+                        violetGlow: '#8b5cf6',
+                        pinkGlow: '#ec4899',
+                        accentBlue: '#3b82f6',
+                        subtleText: '#94a3b8'
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism & Cyber Glow Effects */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .tech-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tech-card:hover {
+            border-color: rgba(6, 182, 212, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 36px -12px rgba(6, 182, 212, 0.25);
+        }
+
+        .cyan-violet-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+
+        /* Filter Button Active State */
+        .filter-btn.active {
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen text-slate-200 antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+    <!-- Ambient Background Grid & Animated Particle Canvas -->
+    <canvas id="ambient-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+    
+    <!-- Background Ambient Glow Orbs -->
+    <div class="fixed top-20 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-20 right-1/4 w-96 h-96 bg-violet-600/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Identity with Updated Profile Avatar -->
+            <a href="#" class="flex items-center gap-3.5 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-400 via-blue-600 to-violet-600 p-[1px] flex items-center justify-center transition-transform group-hover:scale-105 shadow-lg shadow-cyan-500/20 overflow-hidden">
+                    <img src="avatar.jpg" alt="Nguyen Hai Viet Hung" class="w-full h-full object-cover rounded-[11px]">
+                </div>
+                <div>
+                    <span class="font-bold text-base tracking-wide text-slate-100 group-hover:text-cyan-400 transition-colors">NGUYEN HAI VIET HUNG</span>
+                    <span class="block text-[11px] font-mono text-cyan-400/90 tracking-widest uppercase">Senior VFX & Technical Artist</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold tracking-wider uppercase text-slate-400">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Selected Works</a>
+                <a href="#spectrum" class="hover:text-cyan-400 transition-colors">Dual Skill Spectrum</a>
+                <a href="#timeline" class="hover:text-cyan-400 transition-colors">Career Journey</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Quick Action Links -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="mailto:hungvietwork@gmail.com" class="p-2 text-slate-400 hover:text-cyan-400 transition-colors" title="Email Direct">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a href="tel:+84905908575" class="p-2 text-slate-400 hover:text-cyan-400 transition-colors" title="Phone">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                </a>
+                <a href="#contact" class="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 transition-all shadow-lg shadow-cyan-500/20">
+                    Get In Touch
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-cyan-400 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-950/95 px-6 pt-3 pb-6 space-y-3 font-semibold text-sm">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-cyan-400">About</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-cyan-400">Selected Works</a>
+            <a href="#spectrum" class="block py-2 text-slate-300 hover:text-cyan-400">Dual Skill Spectrum</a>
+            <a href="#timeline" class="block py-2 text-slate-300 hover:text-cyan-400">Career Journey</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-cyan-400">Contact</a>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32 pt-10 pb-24">
+
+        <!-- HERO / ABOUT SECTION -->
+        <section id="about" class="relative pt-8 pb-12 lg:py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            
+            <div class="flex-1 space-y-8 text-center lg:text-left">
+                <!-- Status Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass-panel border border-cyan-500/30 text-xs font-mono text-cyan-300">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                    15+ Years Game Industry Veteran (2010 — 2026)
+                </div>
+
+                <!-- Main Headline -->
+                <div class="space-y-3">
+                    <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Bridging <span class="cyan-violet-gradient">Artistic Vision</span> & Engine Technical Precision
+                    </h1>
+                    <p class="text-xs font-mono tracking-widest text-cyan-400 uppercase">
+                        Lead VFX Artist • Technical Artist • Creative & Video Director
+                    </p>
+                </div>
+
+                <!-- Bio Summary -->
+                <p class="max-w-2xl text-base sm:text-lg text-slate-400 leading-relaxed mx-auto lg:mx-0 font-normal">
+                    Over 15 years shaping high-impact visual effects, real-time particle dynamics, level art, and promotional video direction for iconic PC and mobile game titles at <strong class="text-slate-200">Emobigames</strong>, <strong class="text-slate-200">Hiker Games</strong>, <strong class="text-slate-200">Sava Meta</strong>, and <strong class="text-slate-200">Entiz Technology</strong>. Expert in balancing cinematic visual polish with optimal GPU/CPU game performance.
+                </p>
+
+                <!-- Key Highlights & Contact Badges -->
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                    <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 hover:opacity-95 text-white font-semibold text-sm flex items-center gap-2.5 shadow-xl shadow-cyan-500/20 transition-all group">
+                        <i data-lucide="play" class="w-4 h-4 fill-current group-hover:scale-110 transition-transform"></i>
+                        Explore Video Reel & Works
+                    </a>
+                    <a href="mailto:hungvietwork@gmail.com" class="px-7 py-3.5 rounded-xl glass-panel hover:bg-slate-800/80 font-semibold text-sm flex items-center gap-2.5 text-slate-200 border border-slate-700/60 hover:border-cyan-500/50 transition-all">
+                        <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i>
+                        hungvietwork@gmail.com
+                    </a>
+                </div>
+
+                <!-- Experience Stats Grid -->
+                <div class="pt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-slate-800/80 max-w-2xl mx-auto lg:mx-0">
+                    <div>
+                        <div class="text-3xl font-bold text-white">15+</div>
+                        <div class="text-xs text-slate-500 font-mono uppercase mt-1">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-cyan-400">18+</div>
+                        <div class="text-xs text-slate-500 font-mono uppercase mt-1">Shipped Game Titles</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-white">4</div>
+                        <div class="text-xs text-slate-500 font-mono uppercase mt-1">Key Studios</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-violet-400">FPS / RTS</div>
+                        <div class="text-xs text-slate-500 font-mono uppercase mt-1">Core Game Genres</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Overview Card with Featured Avatar Image -->
+            <div class="w-full max-w-md lg:w-96 flex-shrink-0">
+                <div class="relative rounded-2xl tech-card p-6 border border-cyan-500/30 space-y-6 shadow-2xl shadow-cyan-950/50">
+                    
+                    <!-- Avatar Image Header -->
+                    <div class="flex items-center gap-4">
+                        <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-400 to-violet-600 p-[2px] shadow-lg shadow-cyan-500/30 flex-shrink-0">
+                            <img src="avatar.jpg" alt="Nguyen Hai Viet Hung" class="w-full h-full object-cover rounded-[14px]">
+                        </div>
+                        <div class="space-y-1">
+                            <div class="text-xs font-mono text-cyan-400 uppercase tracking-wider">Hanoi, Vietnam</div>
+                            <h3 class="text-xl font-bold text-white">Nguyen Hai Viet Hung</h3>
+                            <p class="text-xs text-slate-400">(Hung Viet)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-xs text-slate-300 pt-3 border-t border-slate-800/80">
+                        <div class="flex justify-between items-center py-1">
+                            <span class="text-slate-500">Education:</span>
+                            <span class="font-medium text-slate-200">FPT Arena Multimedia</span>
+                        </div>
+                        <div class="flex justify-between items-center py-1">
+                            <span class="text-slate-500">Contact:</span>
+                            <span class="font-mono text-cyan-300">(+84) 905-908-575</span>
+                        </div>
+                        <div class="flex justify-between items-center py-1">
+                            <span class="text-slate-500">Primary Engines:</span>
+                            <span class="font-medium text-slate-200">Unity & Unreal Engine</span>
+                        </div>
+                        <div class="flex justify-between items-center py-1">
+                            <span class="text-slate-500">Specialization:</span>
+                            <span class="font-medium text-cyan-400">Real-Time VFX & Video Direction</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800/80">
+                        <div class="text-[11px] font-mono text-slate-500 uppercase mb-2">Core Tech & Tools</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono border border-slate-700/50">Unity Engine</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono border border-slate-700/50">Unreal Engine</span>
+                            <span class="px-2.5 py-1 rounded bg-cyan-950/60 text-cyan-300 text-[11px] font-mono border border-cyan-500/30">EmberGen</span>
+                            <span class="px-2.5 py-1 rounded bg-violet-950/60 text-violet-300 text-[11px] font-mono border border-violet-500/30">Claude, Gemini, ChatGPT</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono border border-slate-700/50">3Ds Max</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono border border-slate-700/50">After Effects</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono border border-slate-700/50">Premiere</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono border border-slate-700/50">Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- PROJECT GALLERY & EMBEDDED VIDEOS -->
+        <section id="projects" class="scroll-mt-24 space-y-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800/80 pb-6">
+                <div>
+                    <h2 class="text-xs font-mono tracking-widest text-cyan-400 uppercase">Interactive Showcase</h2>
+                    <p class="text-3xl font-bold text-white mt-1">Selected Projects & Video Reels</p>
+                </div>
+
+                <!-- Gallery Category Filters -->
+                <div class="flex flex-wrap gap-2 p-1.5 rounded-xl glass-panel border border-slate-800 text-xs font-mono">
+                    <button class="filter-btn active px-4 py-2 rounded-lg transition-all" data-filter="all">All Projects</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="major">Major Titles</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="casual">Casual / Mobile</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="pc">PC & Unreal</button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+                <!-- Shift n' Smash -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/1ot038g18fA/hqdefault.jpg" alt="Shift n' Smash" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('1ot038g18fA', 'Shift n\' Smash (Hi-Tech World Shifting)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Sci-Fi Action</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Shift n' Smash</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Hi-tech fantasy game centered around dimension-shifting mechanics between 2 parallel worlds, battling undead zombie hordes, and strategically constructing pathways.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">World Shifting</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Pathway Building</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Entiz Technology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dead Watcher -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/TTeaCgavXck/hqdefault.jpg" alt="Dead Watcher" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('TTeaCgavXck', 'Dead Watcher (Strategy & Zombie Action)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Action • Strategy</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Dead Watcher</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Action-strategy hybrid focusing on tactical zombie survival, dynamic sector transitions across maps, environmental traps, and high-impact particle combat FX.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Map Sector Transit</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Zombie Combat</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Entiz Technology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Krabots -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/NCHYcRj3KkI/hqdefault.jpg" alt="Krabots" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('NCHYcRj3KkI', 'Krabots (Physics PvP Combat Arena)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Action PvP</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Krabots</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Physics-driven robot combat arena where players assemble custom battle machines. Features custom spark effects, metal collisions, and explosive arena weapon interactions.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Physics Arena</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Robot Combat</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deadly Convoy -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/4btX46k0HFI/hqdefault.jpg" alt="Deadly Convoy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('4btX46k0HFI', 'Deadly Convoy (Post-Apocalyptic Vehicle Survival)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Survival RPG</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Deadly Convoy</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Post-apocalyptic vehicle combat game where players lead heavy armed convoys across wasteland highways, mowing down zombie hordes with mounted guns and explosive traps.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Vehicle Combat</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Post-Apocalypse</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boom Battlefield -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/TVY568Neuso/hqdefault.jpg" alt="Boom Battlefield" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('TVY568Neuso', 'Boom Battlefield (Sci-Fi Tower Defense)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Tower Defense</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Boom Battlefield</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Sci-fi military tower defense combining hero cards and futuristic droids. Features plasma cannon beams, orbital laser strikes, and real-time multiplayer arena combat FX.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Plasma & Laser FX</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Tower Defense</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3Q Chiến Chiến Chiến -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/xE_P4YgmgLY/hqdefault.jpg" alt="3Q Chien Chien Chien" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('xE_P4YgmgLY', '3Q Chiến Chiến Chiến (Tactical Card Game)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Three Kingdoms RPG</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">3Q Chiến Chiến Chiến</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Three Kingdoms tactical card game co-published with SohaGame. High-energy ultimate hero skill bursts, vibrant elemental visual effects, and stylized character combat animations.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Three Kingdoms</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Ultimate Skill FX</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games x Soha</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Castle Connect -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/BgsmuUViwyQ/hqdefault.jpg" alt="Castle Connect" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('BgsmuUViwyQ', 'Castle Connect (Puzzle & Pathway Building)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Puzzle Strategy</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Castle Connect</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Strategic puzzle building game where players form pathway connections between fortress towers to deploy troops and withstand enemy siege waves.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Pathway Connect</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Tower Siege</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Casual Puzzle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caravan War -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/YIJa9sFCxFk/hqdefault.jpg" alt="Caravan War" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('YIJa9sFCxFk', 'Caravan War (Mobile Tower Defense)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Mobile • Tower Defense</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Caravan War</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Global tower defense & strategy game. Crafted tower attack trajectories, ambient weather visuals, sound design, and marketing video clips.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Tower Defense</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Combat VFX</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Hiker Games</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nhất Đại Tông Sư -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/H9_2dVwG_Gg/hqdefault.jpg" alt="Nhat Dai Tong Su" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('H9_2dVwG_Gg', 'Nhat Dai Tong Su (Mobile/Cross 3D RPG)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Cross • 3D RPG</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Nhất Đại Tông Sư</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Cross-platform Wuxia 3D strategy title. Lead particle artist for ultimate kung-fu combat strikes, weapon trails, and video trailers.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Unity Engine</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Weapon Trails</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Combat VFX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dino -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="casual">
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Dino</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Egg-hatching and species collection game mechanic with interactive incubator particle FX and cute creature art supervision.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Egg-Hatching</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Collection</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Sava Meta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotpot -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="casual">
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Hotpot</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Cute animal collection, battle system, and interactive village construction mechanics with whimsical visual effects.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Animal Collection</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Combat</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Village Building</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7554 -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="major pc">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="https://img.youtube.com/vi/J3mN5_Nal_s/hqdefault.jpg" alt="7554 Game" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('J3mN5_Nal_s', '7554 (PC, FPS Game)')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">PC • FPS</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">7554</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Historic first Vietnamese PC FPS title (Emobigames). Lead VFX, weapon impact effects, environmental fire/smoke particle design, and cinematic trailer production.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Trinity Vision</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Weapon VFX</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Trailer Direction</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DUAL SKILL SPECTRUM -->
+        <section id="spectrum" class="scroll-mt-24 space-y-10">
+            <div class="text-center space-y-2">
+                <h2 class="text-xs font-mono tracking-widest text-cyan-400 uppercase">Core Competencies</h2>
+                <p class="text-3xl font-bold text-white">Dual Skill Spectrum</p>
+                <p class="text-xs text-slate-400 max-w-xl mx-auto">Seamlessly bridging the gap between artistic feel and low-level engine optimization.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Spectrum 1: Artistic & Visual Direction -->
+                <div class="tech-card rounded-2xl p-8 space-y-6 border-l-4 border-l-cyan-400">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/20">
+                            <i data-lucide="wand-2" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Artistic & Visual Direction</h3>
+                            <span class="text-xs font-mono text-slate-500 uppercase">Aesthetics, Motion & Storytelling</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-xs text-slate-300">
+                        <li class="space-y-1">
+                            <div class="flex justify-between font-semibold">
+                                <span class="text-slate-200">Real-Time VFX Design & Particle Stylization</span>
+                                <span class="text-cyan-400 font-mono">Expert</span>
+                            </div>
+                            <p class="text-slate-400 leading-normal">Mastery of timing, weight, color palette harmony, and dissipation curves for combat spells, weapon impacts, and explosions.</p>
+                        </li>
+                        <li class="space-y-1">
+                            <div class="flex justify-between font-semibold">
+                                <span class="text-slate-200">Cinematic Trailer & Video Direction</span>
+                                <span class="text-cyan-400 font-mono">15+ Years</span>
+                            </div>
+                            <p class="text-slate-400 leading-normal">Directing, editing, and sound designing high-converting video trailers in Premiere, After Effects, and Audition.</p>
+                        </li>
+                        <li class="space-y-1">
+                            <div class="flex justify-between font-semibold">
+                                <span class="text-slate-200">3D Level Art & Lighting Atmosphere</span>
+                                <span class="text-cyan-400 font-mono">Senior</span>
+                            </div>
+                            <p class="text-slate-400 leading-normal">Environment layout, color grading, post-processing stacks, and volumetric lighting composition in Unity & Unreal Engine.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Spectrum 2: Technical Execution & Optimization -->
+                <div class="tech-card rounded-2xl p-8 space-y-6 border-l-4 border-l-violet-500">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center border border-violet-500/20">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Technical Execution & Optimization</h3>
+                            <span class="text-xs font-mono text-slate-500 uppercase">Engine Pipelines & Performance</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-4 text-xs text-slate-300">
+                        <li class="space-y-1">
+                            <div class="flex justify-between font-semibold">
+                                <span class="text-slate-200">EmberGen & Shader Graph Workflows</span>
+                                <span class="text-violet-400 font-mono">Expert</span>
+                            </div>
+                            <p class="text-slate-400 leading-normal">Simulating real-time fluid/fire dynamics in EmberGen; authoring custom vertex deformation and procedural shaders in Unity/Unreal.</p>
+                        </li>
+                        <li class="space-y-1">
+                            <div class="flex justify-between font-semibold">
+                                <span class="text-slate-200">GPU / CPU Mobile Performance Optimization</span>
+                                <span class="text-violet-400 font-mono">Expert</span>
+                            </div>
+                            <p class="text-slate-400 leading-normal">Optimizing draw calls, overdraw, particle batching, texture atlases, and shader pass overhead for 60 FPS target mobile builds.</p>
+                        </li>
+                        <li class="space-y-1">
+                            <div class="flex justify-between font-semibold">
+                                <span class="text-slate-200">AI-Assisted Pipelines & Tooling</span>
+                                <span class="text-violet-400 font-mono">Proficient</span>
+                            </div>
+                            <p class="text-slate-400 leading-normal">Utilizing Claude, Gemini, ChatGPT, and AI creative tools to accelerate texture generation, sprite sheet baking, and rapid concept iteration.</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WORK JOURNEY TIMELINE -->
+        <section id="timeline" class="scroll-mt-24 space-y-10">
+            <div class="text-center space-y-2">
+                <h2 class="text-xs font-mono tracking-widest text-cyan-400 uppercase">Career Progression</h2>
+                <p class="text-3xl font-bold text-white">Work Journey (2010 — 2026)</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto pl-6 sm:pl-10 border-l border-slate-800 space-y-12">
+                
+                <!-- Entiz Technology Era -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-cyan-400 border-4 border-slate-950 shadow-md shadow-cyan-500/50 group-hover:scale-125 transition-transform"></div>
+                    <div class="tech-card p-7 rounded-2xl space-y-4">
+                        <div class="flex flex-wrap justify-between items-center gap-2 border-b border-slate-800/80 pb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Technical Artist & VFX Artist</h3>
+                                <span class="text-xs text-cyan-400 font-semibold">Entiz Technology</span>
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 font-mono text-xs border border-cyan-500/20">2025 — 2026</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Serving as Technical Artist and VFX Artist, driving real-time particle dynamics, shader development, and technical pipeline execution for key titles.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80">Key Titles: Shift n' Smash, Dead Watcher</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sava Meta Era -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-cyan-400 border-4 border-slate-950 shadow-md shadow-cyan-500/50 group-hover:scale-125 transition-transform"></div>
+                    <div class="tech-card p-7 rounded-2xl space-y-4">
+                        <div class="flex flex-wrap justify-between items-center gap-2 border-b border-slate-800/80 pb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Game VFX Artist, Technical Artist & Art Direction Supervision</h3>
+                                <span class="text-xs text-cyan-400 font-semibold">Sava Meta</span>
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 font-mono text-xs border border-cyan-500/20">2024 — 2025</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Handled game VFX art, technical art workflows, and art direction supervision for VR/AR open world projects.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80">Key Titles: Dino, Hotpot</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hiker Games Era -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-cyan-400 border-4 border-slate-950 shadow-md shadow-cyan-500/50 group-hover:scale-125 transition-transform"></div>
+                    <div class="tech-card p-7 rounded-2xl space-y-4">
+                        <div class="flex flex-wrap justify-between items-center gap-2 border-b border-slate-800/80 pb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Senior Lead VFX Artist & Video Creative Director</h3>
+                                <span class="text-xs text-cyan-400 font-semibold">Hiker Games (Formerly Emobi Games)</span>
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-300 font-mono text-xs border border-cyan-500/20">2012 — 2024</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Supervised and authored visual effects, level lighting, and marketing trailers for over 12 released titles spanning mobile, cross-platform, and PC platforms. Led the VFX pipeline shift to modern EmberGen real-time simulation workflows.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80">Key Titles: Caravan War, Krabots, Deadly Convoy, Boom Battlefield, 3Q Chiến Chiến Chiến, Castle Connect, FZ9 Timeshift, Epic Odyssey, 300475</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emobigames Foundations -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-violet-500 border-4 border-slate-950 shadow-md group-hover:scale-125 transition-transform"></div>
+                    <div class="tech-card p-7 rounded-2xl space-y-4">
+                        <div class="flex flex-wrap justify-between items-center gap-2 border-b border-slate-800/80 pb-3">
+                            <div>
+                                <h3 class="text-xl font-bold text-white">VFX Artist & Media Creator</h3>
+                                <span class="text-xs text-violet-400 font-semibold">Emobigames</span>
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full bg-slate-800 text-slate-400 font-mono text-xs">2010 — 2012</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Contributed to Vietnam's pioneer historical PC FPS <strong class="text-slate-100">7554</strong> and RTS <strong class="text-slate-100">2112 Revolution</strong>. Handled real-time particles, weapon fire dynamics, sound editing, and video trailer editing.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80">Key Titles: 7554, 2112 Revolution</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FPT Arena Education -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-5 h-5 rounded-full bg-slate-600 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                    <div class="tech-card p-6 rounded-2xl space-y-2">
+                        <div class="flex flex-wrap justify-between items-center gap-2">
+                            <h3 class="text-lg font-bold text-white">Multimedia & Digital Arts Graduate</h3>
+                            <span class="text-xs font-mono text-slate-500">FPT Arena Multimedia</span>
+                        </div>
+                        <p class="text-xs text-slate-400">Formal training in digital art fundamentals, motion graphics, 3D modeling, and video composition.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="scroll-mt-24 space-y-10">
+            <div class="max-w-3xl mx-auto glass-panel p-8 sm:p-12 rounded-3xl border border-cyan-500/30 relative overflow-hidden shadow-2xl shadow-cyan-950/50">
+                <div class="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="text-center space-y-3 mb-10">
+                    <h2 class="text-xs font-mono tracking-widest text-cyan-400 uppercase">Direct Contact</h2>
+                    <p class="text-3xl font-bold text-white">Let's Collaborate</p>
+                    <p class="text-xs text-slate-400">Available for Lead VFX Artist, Senior Technical Artist & Creative Direction roles.</p>
+                </div>
+
+                <!-- Contact Info Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-xs font-mono">
+                    <a href="mailto:hungvietwork@gmail.com" class="p-4 rounded-xl tech-card flex items-center gap-3 hover:border-cyan-400 transition-all">
+                        <div class="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="block text-slate-500 text-[10px]">EMAIL ADDRESS</span>
+                            <span class="text-slate-200 font-bold">hungvietwork@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="tel:+84905908575" class="p-4 rounded-xl tech-card flex items-center gap-3 hover:border-cyan-400 transition-all">
+                        <div class="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <span class="block text-slate-500 text-[10px]">PHONE / ZALO</span>
+                            <span class="text-slate-200 font-bold">(+84) 905-908-575</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Quick Message Form -->
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-mono text-slate-400 mb-1.5">Your Name</label>
+                            <input type="text" required placeholder="Name or Studio" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 text-xs focus:outline-none focus:border-cyan-400 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-slate-400 mb-1.5">Your Email</label>
+                            <input type="email" required placeholder="email@domain.com" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 text-xs focus:outline-none focus:border-cyan-400 transition-colors">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-slate-400 mb-1.5">Message / Inquiry Details</label>
+                        <textarea rows="4" required placeholder="Share project details, game genre, target platforms, or inquiry..." class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 text-xs focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 hover:opacity-95 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
+                        <i data-lucide="send" class="w-4 h-4"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-8 relative z-10 text-xs text-slate-500 font-mono">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                © 2026 Nguyen Hai Viet Hung. All Rights Reserved.
+            </div>
+            <div class="flex items-center space-x-6 text-slate-400">
+                <span>Hanoi, Vietnam</span>
+                <span>•</span>
+                <a href="mailto:hungvietwork@gmail.com" class="hover:text-cyan-400 transition-colors">hungvietwork@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX YOUTUBE MODAL PLAYER -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6">
+        <div class="relative w-full max-w-4xl glass-panel rounded-2xl overflow-hidden border border-cyan-500/30 shadow-2xl shadow-cyan-950/80 space-y-0">
+            <div class="flex items-center justify-between px-5 py-3 border-b border-slate-800/80 bg-slate-950">
+                <h3 id="modal-video-title" class="font-mono text-sm text-cyan-400 font-bold tracking-wide">Project Video Showcase</h3>
+                <button onclick="closeVideoModal()" class="p-1 text-slate-400 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="relative aspect-video bg-black">
+                <iframe 
+                    id="modal-iframe" 
+                    class="w-full h-full border-0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden glass-panel border border-cyan-400 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 font-mono text-xs">
+        <i data-lucide="check-circle" class="w-5 h-5 text-cyan-400"></i>
+        <span>Thank you! Your message has been sent.</span>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Ambient Background Canvas Dots
+        const canvas = document.getElementById('ambient-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.radius = Math.random() * 1.5 + 0.5;
+                this.color = Math.random() > 0.5 ? '#06b6d4' : '#8b5cf6';
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 45; i++) particles.push(new Particle());
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Project Category Filter Handler
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // YouTube Video Modal Lightbox Handler
+        const videoModal = document.getElementById('video-modal');
+        const modalIframe = document.getElementById('modal-iframe');
+        const modalVideoTitle = document.getElementById('modal-video-title');
+
+        function openVideoModal(youtubeId, title) {
+            modalIframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&enablejsapi=1`;
+            modalVideoTitle.textContent = title;
+            videoModal.classList.remove('hidden');
+        }
+
+        function closeVideoModal() {
+            modalIframe.src = '';
+            videoModal.classList.add('hidden');
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === videoModal) closeVideoModal();
+        });
+
+        // Contact Form Toast Simulation
+        const contactForm = document.getElementById('contact-form');
+        const toast = document.getElementById('toast');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 4000);
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
