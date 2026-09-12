@@ -205,7 +205,7 @@
                         <div class="text-xs text-slate-500 font-mono uppercase mt-1">Years Experience</div>
                     </div>
                     <div>
-                        <div class="text-3xl font-bold text-cyan-400">14</div>
+                        <div class="text-3xl font-bold text-cyan-400">22</div>
                         <div class="text-xs text-slate-500 font-mono uppercase mt-1">Shipped Game Titles</div>
                     </div>
                     <div>
@@ -287,8 +287,8 @@
                     <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="fps">FPS</button>
                     <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="tower-defense">Tower Defense</button>					
                     <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="card-battle">Card Battle</button>
-                    <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="tower-defense">Tactical</button>
-                    <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="puzzle">Puzzle</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="tactical">Tactical</button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-cyan-400 transition-all" data-filter="puzzle-casual">Puzzle/Casual</button>
                 </div>
             </div>
 
@@ -558,7 +558,7 @@
                 </div>
 
                 <!-- 12. Castle Connect -->
-                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="action tower-defense">
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="action tower-defense puzzle-casual">
                     <div class="relative aspect-video overflow-hidden bg-slate-950">
                         <img src="images/castleconnect_thumb.jpg" alt="Castle Connect" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
@@ -577,6 +577,7 @@
                         <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
                             <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Action</span>
                             <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Tower Defense</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Puzzle/Casual</span>
                         </div>
                     </div>
                 </div>
@@ -624,6 +625,195 @@
                         </div>
                         <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
                             <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Card Battle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Sea Lord -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="puzzle-casual action">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/seelord_thumb.jpg" alt="Sea Lord" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/sealord_video.mp4', 'Sea Lord')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Casual • Naval Combat</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Sea Lord</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">An action-packed naval combat experience featuring real-time PvP ship battles across dynamic oceanic arenas. Designed high-impact cannon blast effects, water surface wakes, and destruction feedback.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Puzzle/Casual</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">PvP Naval</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. Gate Time Keeper -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="puzzle-casual tower-defense tactical">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/gatetimekeeper_thumb.jpg" alt="Gate Time Keeper" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/gatetimekeeper_video.mp4', 'Gate Time Keeper')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Casual • Tower Defense</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Gate Time Keeper</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">A tactical casual tower defense hybrid where players defend ancient dimensional gateways from relentless monster onslaughts using time-bending defensive spells and barrier mechanics.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Puzzle/Casual</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Tower Defense</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17. Animal Pair -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="puzzle-casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/animalpair_thumb.jpg" alt="Animal Pair" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/animalpair_video.mp4', 'Animal Pair')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Puzzle</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Animal Pair</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">A charming and engaging puzzle game where players match and pair distinct animal tiles across increasingly complex board configurations under satisfying visual feedback.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Puzzle/Casual</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 18. Z-City Survivor -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="puzzle-casual action tactical">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/zcitysurvivor_thumb.jpg" alt="Z-City Survivor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/zcitysurvivor_video.mp4', 'Z-City Survivor')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Casual • Pixel Survival</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Z-City Survivor</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">A retro pixel-art casual survival game where players employ intuitive tactical positioning and weapon upgrades to endure massive, endless waves of urban zombie swarms.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Puzzle/Casual</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Tactical</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 19. Arcade Hunter -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="puzzle-casual action">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/arcadehunter_thumb.jpg" alt="Arcade Hunter" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/arcadehunter_video.mp4', 'Arcade Hunter')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Casual • Action</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Arcade Hunter</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">Fast-paced, Archero-inspired roguelite shooter where players navigate fantasy dungeons, dodge projectles, and eliminate hordes of deadly monsters using stackable combat skills.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Puzzle/Casual</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Action</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 20. Pack-it -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="puzzle-casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/packit_thumb.jpg" alt="Pack-it" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/packit_video.mp4', 'Pack-it')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Casual • Puzzle</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Pack-it</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">A highly satisfying spatial puzzle title where players fit awkwardly shaped objects and items perfectly into restricted container spaces with clean UI interaction.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Puzzle/Casual</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 21. Rocket Rider -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="puzzle-casual action">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/rocketrider_thumb.jpg" alt="Rocket Rider" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/rocketrider_video.mp4', 'Rocket Rider')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Puzzle • Action</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Rocket Rider</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">High-flying arcade puzzle game where players pilot rocket vehicles through intricate obstacle courses, solving environmental puzzles while combating attacking monsters in real-time.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Puzzle/Casual</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Action</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 22. Fruit Basket -->
+                <div class="project-card tech-card rounded-2xl overflow-hidden flex flex-col group" data-category="puzzle-casual">
+                    <div class="relative aspect-video overflow-hidden bg-slate-950">
+                        <img src="images/fruitbasket_thumb.jpg" alt="Fruit Basket" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-85">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <button onclick="openVideoModal('videos/fruitbasket_video.mp4', 'Fruit Basket')" class="absolute inset-0 flex items-center justify-center bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-14 h-14 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 shadow-xl shadow-cyan-400/50 transform group-hover:scale-110 transition-transform">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                            </div>
+                        </button>
+                        <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md glass-panel text-[10px] font-mono text-cyan-300 border border-cyan-500/30">Casual • Puzzle</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Fruit Basket</h3>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-2">A colorful physics arcade title where quick reflexes and basket maneuvers prevent falling fruits from hitting the ground while creating high-score chain combos.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-800/60">
+                            <span class="px-2 py-0.5 rounded bg-slate-800/80 text-[10px] font-mono text-slate-400">Puzzle/Casual</span>
                         </div>
                     </div>
                 </div>
